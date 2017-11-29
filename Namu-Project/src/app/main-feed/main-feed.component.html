@@ -1,3 +1,93 @@
-<p>
-  main-feed works!
-</p>
+<!--header: 범용 컴포넌트-->
+<header class="header">
+  <div class="container_12">
+    <div class="grid_2"><h1>logo</h1></div>
+    <div class="grid_8">search</div>
+    <div class="grid_2">icons</div>
+  </div>
+</header>
+
+
+<!--nav: 페이지마다 만들어야할 듯-->
+<nav class="nav">
+  <div class="container_12">
+    <div class="grid_2 prefix_4">
+      <a href="#"><span>읽기</span></a>
+    </div>
+    <div class="grid_2 suffix_4">
+      <a href="#"><span>답변하기</span></a>
+    </div>
+  </div>
+</nav>
+
+<!--main: 큰 레이아웃만 공유-->
+<div class="main">
+  <!--main-content-->
+  <div class="container_12">
+    <div class="grid_2">
+      <div class="side-bar">
+        <h4>피드</h4>
+        <ul>
+          <li>인기글</li>
+          <li>북마크한 답변</li>
+          <li>최신 글</li>
+          <li>내 토픽
+            <ul>
+              <li>토픽 1</li>
+              <li>토픽 2</li>
+              <li>토픽 3</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid_8">
+
+      <!--welcome-->
+      <div class="welcome">
+        <mat-card>
+          <div class="welcome-msg">
+            <div mat-card-avatar class="example-header-image">profile</div>
+            <h2>김경훈님, 질문이 무엇인가요?</h2>
+          </div>
+        </mat-card>
+      </div>
+
+      <!--post-->
+      <div class="post">
+        <mat-card>
+          <mat-card-header>
+            <div class="post-tags">
+              <span>답변</span>
+              <a href="#"><span>연관토픽</span></a>
+              <a href="#"><span>연관토픽</span></a>
+            </div>
+            <h2 class="post-heading">페이스북 광고는 어떻게 시작하나요?</h2>
+            <div class="post-answer">
+              <img src="https://i.ytimg.com/vi/h_KkB_NcGPE/hqdefault.jpg" alt="" width="50" height="50">
+
+            </div>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              1990년 고딩2때 청주에서 전국체전이 열렸다. 그리고 주간야구라는 당시 유일했던 야구잡지사에서 글을 쓰는 기자분이 그라운드안에서 내게 인사를 건냈다. 그리고 몇가지 질문을 하고나서 내게 훗날 좋은 선수가 되길바란다고했다. 그리고 다음해 1991년 여름, 국가대표로 미국에서 활약하고 돌아온 나는 공항에서 일년전 그기자형을 만났다. 당시 다른선수들과는 달리 서울에서 갈곳이 없었던 나를 집에 데리고가서 하루밤을 재워주셨다. 그기자형의 집에 도착해서 나는 기자형의 방안에 있던 책장속에 눈을 뗄수가 없었다. 책장속에는 온갓 영어로만된 미식축구, 농구,야구 잡지들이 가득했다. 그중에서 놀란라이언의 책은 나의 심장을 자극했다. 나는 기자형의 도움으로 대충 책속의 내용을 들으며 사진들을 관찰했다. 나의 그런모습을 보고는 그기자형은 내게 그책을 선물로 주셨다. 미국가서 좋은성적을 낸것보다 몇배 더 좋았다. 그뒤로 난 책속의 놀란라이언을 흉내내기시작했다. 놀란라이언처럼 강속구 투수가 되고싶었다. 그래서 런닝을 많이하고 웨이트트레이닝을 많이 한다는 책속의 내용과 사진들을 따라했다. 그리고 어느덧 난 강속구투구가 되어있었다. 꿈을 갖는다는것 그리고 꿈을 준다는것....그렇게 기자형님과 나는 꿈을 주고 받는 소중한 인연을 이어갔다. 훗날 나는 최초의 코리언 메이저리거가 되었고 그 기자형은 야구전문기자로써 최초의 야구단 사장이 되었다. 소중함과 고마운인연.
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <!--typography test-->
+      <div class="test">
+        <h1>Typography test</h1>
+        <h1>h1: 제목</h1>
+        <h2>h2: 표제2</h2>
+        <h3>h3: 제목</h3>
+        <h4>h4: 제목</h4>
+        <h5>h5: 제목</h5>
+        <p>p: 단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락단락</p>
+      </div>
+
+    </div>
+    <div class="grid_2"></div>
+  </div>
+</div>

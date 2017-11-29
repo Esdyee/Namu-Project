@@ -1,0 +1,51 @@
+* {
+  font-family: 'Spoqa Han Sans', 'sans-serif';
+}
+
+.fixed {
+  /*position: fixed;*/
+  /*top: 0;*/
+  /*width: 100%;*/
+}
+
+.header {
+  /*position: sticky;*/
+  /*z-index: 1;*/
+  /*top: 0;*/
+  background-color: #25284c;
+  height: 5rem;
+  color: white;
+}
+
+.nav {
+  /*position: sticky;*/
+  /*top: 5rem;*/
+  /*z-index: 1;*/
+  background-color: white;
+  height: 4rem;
+  border-bottom: 1px solid #bababa;
+}
+
+.side-bar,
+.welcome {
+  margin-top: 2rem;
+}
+
+.side-bar {
+}
+
+.post {
+  margin-top: 1rem;
+}
+
+.mat-card-header {
+  display: block;
+}
+
+.post-heading {
+  display: flex;
+}
+
+.post-answer img {
+  border-radius: 50%;
+}
