@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   template: `
   <app-main-login></app-main-login>
   Test
+  Chankyu
   `,
   styleUrls: ['./login.component.css']
 })
