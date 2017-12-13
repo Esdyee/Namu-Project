@@ -1,5 +1,5 @@
 <div class="main">
-
+  <app-editor [answerMetaData]="answerHeader" *ngIf="isEditMode" (closed)="closeEditor($event)"></app-editor>
   <div class="container_12">
     <div class="grid_2">
       <!--TODO: component 분리-->
@@ -38,15 +38,14 @@
           </div>
         </div>
         <mat-card-actions>
-          <!--TODO: (click)="callEditorWithQuestionPK(not for each !!!!important)"-->
-          <button mat-button>답변 달기</button>
+          <button mat-button (click)="openEditor(question.question)">답변 달기</button>
           <button mat-button>팔로우</button>
         </mat-card-actions>
       </mat-card>
     </div>
 
     <div class="grid_2">
-      <button type="button" (click)="loadQuestions()">더보기(임시)</button>
+      <button type="button" (click)="getNextPage()">더보기(임시)</button>
     </div>
   </div>
 </div>
