@@ -2,11 +2,10 @@ import { User, users } from './user';
 import { questions } from '../question-feed/question';
 
 export class Answer {
-  id: number;
-  user: User;
-  question: string;
+  question: number;
   content: string;
-  stats: object;
+  content_html: string;
+  published: boolean;
 }
 
 export const answers = [
