@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../auth.service'
@@ -26,9 +27,9 @@ export class MainLoginComponent implements OnInit {
   findPassword(){
     this.navRoute.navigate(['find']);
   }
-  
+
   FBLogin(){
-    
+
     let funcPost = function (fbtoken, userid) {
       return new Promise((resolve, reject) => {
         let req = new XMLHttpRequest();

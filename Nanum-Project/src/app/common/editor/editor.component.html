@@ -2,10 +2,10 @@
   <div class="header">
     <div class="container_12">
       <div class="grid_8 prefix_2 suffix_2">
-        <h2 class="mat-h1">Angular 프레임워크는 무엇인가요?</h2>
+        <h2 class="mat-h1">{{ answerMetaData.content }}</h2>
       </div>
     </div>
-    <span><i class="material-icons">close</i></span>
+    <span><i class="material-icons" (click)="closeEditor()">close</i></span>
   </div>
   <div class="container_12">
     <div class="grid_8 prefix_2 suffix_2">
@@ -36,7 +36,7 @@
             </quill-editor>
             <div class="form-buttons">
               <button mat-button type="submit" color="primary">확인</button>
-              <button mat-button type="button" (click)="getContent()">임시 저장</button>
+              <button mat-button type="button" (click)="saveContent()">임시 저장</button>
               <span>draft saved before...</span>
             </div>
           </form>

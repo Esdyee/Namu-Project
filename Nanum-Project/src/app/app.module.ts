@@ -27,7 +27,7 @@ import { NavTabComponent } from './common/nav-tab/nav-tab.component';
 import { ProfileTopicModalComponent } from './profile/profile-topic-modal/profile-topic-modal.component';
 import { ProfileFollowModalComponent } from './profile/profile-follow-modal/profile-follow-modal.component';
 import { QuestionService } from './question-feed/question.service';
-
+import { MainFeedService } from './main-feed/main-feed.service';
 
 
 
@@ -68,7 +68,7 @@ import { QuestionService } from './question-feed/question.service';
     AskModalComponent,
     TopicSelectComponent
   ],
-  providers: [QuestionService],
+  providers: [MainFeedService, QuestionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
