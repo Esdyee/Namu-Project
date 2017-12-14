@@ -1,3 +1,11 @@
-<p>
-  profile-topic-modal works!
-</p>
+<h2 mat-dialog-title>관심 토픽, 전문 토픽</h2>
+<div mat-dialog-content>
+  <mat-grid-list cols="5" rowHeight="1:1" gutterSize="7px">
+    <mat-grid-tile *ngFor="let topic of data.interestContainer">
+      <img class="topic-img" [src]="topic.imge">
+      <mat-grid-tile-footer>
+        {{topic.content}}
+      </mat-grid-tile-footer>
+    </mat-grid-tile>     
+  </mat-grid-list>
+</div>

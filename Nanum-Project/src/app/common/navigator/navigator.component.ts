@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, RouterState } from '@angular/router';
 
 import { AskModalComponent } from './ask-modal/ask-modal.component';
 
@@ -25,29 +25,33 @@ export class NavigatorComponent implements OnInit {
   // 더미에서 me(김경훈)만 가져오기
   user = users.me;
 
+  isShow: boolean;
+
+  tabStatus: any;
+
   tabLinks: TabLink[];
 
   constructor(public dialog: MatDialog,
-    private router: Router) { }
+    private router: Router) {
+    }
 
   ngOnInit() {
-    this.mainTabLinks();
+    console.log(this.router.routerState);
   }
 
-  mainTabLinks() {
-    this.router.navigate(['main']);
-    this.tabLinks = [
-      { label: '읽기', link: 'main' },
-      { label: '답변하기', link: '**' }
-    ];
-  }
-
-  profileTabLinks() {
-    this.router.navigate(['answer']);
-    this.tabLinks = [
-      { label: '프로필', link: 'answer' },
-      { label: '포스트', link: 'login/main' }
-    ];
+  checkTabStatus() {
+    if (this.tabStatus === 'main') {
+      this.tabLinks = [
+        { label: '읽기', link: 'main' },
+        { label: '답변하기', link: 'answer' }
+      ];
+    } else if (this.tabStatus === 'question') {
+      this.tabLinks = [
+        { label: '프로필', link: 'question' },
+        { label: '포스트', link: 'login/main' }
+      ];
+    } else {
+    }
   }
 
   // 모달 오픈
@@ -63,7 +67,7 @@ export class NavigatorComponent implements OnInit {
     });
   }
 
-  // test 사용자가 토픽 선택 정보가 없을시 작동해야함
+  // test 사용자가 토픽 선택 정보가 없을시 작동해야함 나중에 main-feed로 이동
   openTopicSelectModal(): void {
     const dialogRef = this.dialog.open(TopicSelectComponent, {
       width: '800px',

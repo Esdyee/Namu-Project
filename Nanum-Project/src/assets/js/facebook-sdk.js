@@ -11,8 +11,9 @@
       testAPI();
     } else {
       // The person is not logged into your app or we are unable to tell.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
+      //document.getElementById('status').innerHTML = 'Please log ' +
+      //'into this app.';
+      console.log('not connect!!');
     }
   }
 
@@ -27,8 +28,7 @@
 
   window.fbAsyncInit = function() {
     FB.init({
-      appId: '378269639280699',
-      //appId: '1899454773703414',
+      appId: '1899454773703414',
       cookie: true, // enable cookies to allow the server to access
       // the session
       xfbml: true, // parse social plugins on this page

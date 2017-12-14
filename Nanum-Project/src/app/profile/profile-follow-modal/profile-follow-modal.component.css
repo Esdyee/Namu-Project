@@ -1,0 +1,22 @@
+.thumbnail {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+a.mat-list-item {
+  height: 55px !important;
+}
+
+span.mat-line {
+  font-size: 1em !important;
+  margin-bottom: 5px !important;
+}
+
+p.mat-line {
+  font-size: 0.5em !important;
+  height: 12px !important;
+  color: rgb(190, 190, 190) !important;
+  margin: 0 !important;
+}
+

@@ -2,7 +2,7 @@
   <div class="container_12">
     <div class="grid_3">
       <label class="mat-h2 logo">NANUM</label>
-      <button (click)="mainTabLinks()">test</button>
+      <button (click)="checkTabStatus()">test</button>
     </div>
     <div class="grid_6">
       <mat-form-field class="search-form-field">
@@ -21,15 +21,12 @@
               (click)="openAskModal()">
               질문하기
       </button>
-      <button mat-icon-button color="primary">
-        <mat-icon>notifications</mat-icon>
-      </button>
       <button mat-mini-fab color="primary"
               [matMenuTriggerFor]="menu">
         <mat-icon>face</mat-icon>
       </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="profileTabLinks()">
+    <mat-menu #menu="matMenu" overlapTrigger="false">
+      <button mat-menu-item (click)="checkTabStatus()">
         <span>내 프로필</span>
       </button>
       <button mat-menu-item>
@@ -42,3 +39,4 @@
   <app-nav-tab
     [tabLinks]="tabLinks">
   </app-nav-tab>
+<router-outlet></router-outlet>
