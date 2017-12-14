@@ -4,7 +4,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 25rem;
+  width: 30rem;
   height: 30rem;
 }
 
@@ -16,7 +16,7 @@
 }
 
 mat-form-field {
-  width: 20rem;
+  width: 25rem;
 }
 
 .input-signup {

@@ -24,6 +24,7 @@
       "../node_modules/font-awesome/css/font-awesome.css"
     ],
     "scripts": [
+      "./assets/js/facebook-sdk.js"
     ],
     "environmentSource": "environments/environment.ts",
     "environments": {

@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+//import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -14,11 +14,10 @@ import { SignupComponent } from './signup/signup.component';
 
 //service
 import { AppService } from '../app.service';
-import { AuthService } from './auth.service'
+import { AuthService } from './auth.service';
 
 @NgModule({
     imports: [
-        BrowserModule,
         CommonModule,
         LoginRoutingModule,
         FormsModule,

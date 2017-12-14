@@ -8,7 +8,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "clean-source": "rimraf README.md src webroot package.json",
+    "deploy": "./node_modules/.bin/deploy"
   },
   "private": true,
   "dependencies": {
@@ -26,8 +28,9 @@
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
+    "install": "^0.10.2",
     "ngx-quill": "^2.0.4",
-    "package.json": "^1.0.0",
+    "package.json": "^1.0.2",
     "pakage.json": "^1.0.0",
     "quill": "^1.3.4",
     "rxjs": "^5.5.2",
@@ -49,9 +52,22 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "ng-deploy-gh-pages": "^1.0.1",
     "protractor": "~5.1.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "~2.4.2"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "dist",
+    "cname": "nope.org",
+    "prep": [
+      "build-sass",
+      "optimize-img"
+    ],
+    "post": [
+      "clean-source"
+    ],
+    "noprompt": false
   }
 }

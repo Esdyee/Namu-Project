@@ -18,7 +18,6 @@ html {
 
 html,
 body {
-  //height: 100vh;
   margin: 0;
   padding: 0;
   overflow: auto;
@@ -26,35 +25,15 @@ body {
 
 // TODO: 전역 글꼴 컬러 설정하기 theming 혹은 오버라이드 color: #100c08
 // custom typography
-$custom-typography: mat-typography-config(
-  $font-family: 'Spoqa Han Sans, sans-serif',
-  // arguments: size, line-height, weight
-  // spoqa han sans weights: 200, 300, 400(regular), 700
-
-  // 별도의 디스플레이 크기 표시용
-  $display-4:     mat-typography-level(112px, 1.6, 400),
-  $display-3:     mat-typography-level(56px, 1.6, 400),
-  $display-2:     mat-typography-level(45px, 1.6, 400),
-  $display-1:     mat-typography-level(1rem, 1.6, 400),
-
-  // headings
-  $headline:      mat-typography-level(1.8rem, 1.6, 700),
-  $title:         mat-typography-level(1.8rem, 1.6, 700),
-  $subheading-2:  mat-typography-level(1.25rem, 1.6, 400),
-  $subheading-1:  mat-typography-level(1.25rem, 1.6, 700),
-  // paragraphs
-  $body-2:        mat-typography-level(1.25rem, 1.6, 700),
-  $body-1:        mat-typography-level(1.25rem, 1.6, 400),
-  // 캡션, 버튼
-  $caption:       mat-typography-level(1rem, 1.6, 300),
-  $button:        mat-typography-level(1.25rem, 1.6, 500),
-  // input 플레이스홀더
-  $input:         mat-typography-level(1rem, 1.6, 400)
-);
-
+$custom-typography: mat-typography-config( $font-family: 'Spoqa Han Sans, sans-serif', // arguments: size, line-height, weight
+// spoqa han sans weights: 200, 300, 400(regular), 700
+// 별도의 디스플레이 크기 표시용
+$display-4 : mat-typography-level(112px, 1.6, 400), $display-3 : mat-typography-level(56px, 1.6, 400), $display-2 : mat-typography-level(45px, 1.6, 400), $display-1 : mat-typography-level(1rem, 1.6, 400), // headings
+$headline : mat-typography-level(1.8rem, 1.6, 700), $title : mat-typography-level(1.8rem, 1.6, 700), $subheading-2 : mat-typography-level(1.25rem, 1.6, 400), $subheading-1 : mat-typography-level(1.25rem, 1.6, 700), // paragraphs
+$body-2 : mat-typography-level(1.25rem, 1.6, 700), $body-1 : mat-typography-level(1.25rem, 1.6, 400), // 캡션, 버튼
+$caption : mat-typography-level(1rem, 1.6, 300), $button : mat-typography-level(1.25rem, 1.6, 500), // input 플레이스홀더
+$input : mat-typography-level(1rem, 1.6, 400));
 @include mat-core($custom-typography);
-
-
 html.cdk-global-scrollblock {
   //overflow-y: auto !important;
 }
@@ -63,12 +42,14 @@ html.cdk-global-scrollblock {
   //margin-left: -7px !important;
 }
 
+
 /*
   960 Grid System ~ Core CSS.
   Learn more ~ http://960.gs/
 
   Licensed under GPL and MIT.
 */
+
 
 /*
   Forces backgrounds to span full width,
@@ -82,6 +63,7 @@ body {
   min-width: 960px;
 }
 
+
 /* `Container
 ----------------------------------------------------------------------------------------------------*/
 
@@ -90,6 +72,7 @@ body {
   margin-right: auto;
   width: 960px;
 }
+
 
 /* `Grid >> Global
 ----------------------------------------------------------------------------------------------------*/
@@ -112,19 +95,31 @@ body {
   margin-right: 10px;
 }
 
-.push_1, .pull_1,
-.push_2, .pull_2,
-.push_3, .pull_3,
-.push_4, .pull_4,
-.push_5, .pull_5,
-.push_6, .pull_6,
-.push_7, .pull_7,
-.push_8, .pull_8,
-.push_9, .pull_9,
-.push_10, .pull_10,
-.push_11, .pull_11 {
+.push_1,
+.pull_1,
+.push_2,
+.pull_2,
+.push_3,
+.pull_3,
+.push_4,
+.pull_4,
+.push_5,
+.pull_5,
+.push_6,
+.pull_6,
+.push_7,
+.pull_7,
+.push_8,
+.pull_8,
+.push_9,
+.pull_9,
+.push_10,
+.pull_10,
+.push_11,
+.pull_11 {
   position: relative;
 }
+
 
 /* `Grid >> Children (Alpha ~ First, Omega ~ Last)
 ----------------------------------------------------------------------------------------------------*/
@@ -136,6 +131,7 @@ body {
 .omega {
   margin-right: 0;
 }
+
 
 /* `Grid >> 12 Columns
 ----------------------------------------------------------------------------------------------------*/
@@ -188,6 +184,7 @@ body {
   width: 940px;
 }
 
+
 /* `Prefix Extra Space >> 12 Columns
 ----------------------------------------------------------------------------------------------------*/
 
@@ -234,6 +231,7 @@ body {
 .container_12 .prefix_11 {
   padding-left: 880px;
 }
+
 
 /* `Suffix Extra Space >> 12 Columns
 ----------------------------------------------------------------------------------------------------*/
@@ -282,6 +280,7 @@ body {
   padding-right: 880px;
 }
 
+
 /* `Push Space >> 12 Columns
 ----------------------------------------------------------------------------------------------------*/
 
@@ -328,6 +327,7 @@ body {
 .container_12 .push_11 {
   left: 880px;
 }
+
 
 /* `Pull Space >> 12 Columns
 ----------------------------------------------------------------------------------------------------*/
@@ -376,8 +376,10 @@ body {
   left: -880px;
 }
 
+
 /* `Clear Floated Elements
 ----------------------------------------------------------------------------------------------------*/
+
 
 /* http://sonspring.com/journal/clearing-floats */
 
@@ -389,6 +391,7 @@ body {
   width: 0;
   height: 0;
 }
+
 
 /* http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified */
 
@@ -410,6 +413,7 @@ body {
 .container_12:after {
   clear: both;
 }
+
 
 /*
   The following zoom:1 rule is specifically for IE6 + IE7.

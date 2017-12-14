@@ -5,10 +5,12 @@
   </p>
   <div class="btn-login">
     <button class="email-login" routerLink="../connect">로그인</button>
-    <button class="facebook-login">페이스북으로 로그인</button>
+    <button class="facebook-login" (click)="FBLogin()">페이스북으로 로그인</button>
   </div>
+  <pre style="color:white">{{obj}}</pre>
   <div class="account">
     <button class="find-password" routerLink="../find">비밀번호 찾기</button> |
     <button class="btn-signup" routerLink="../signup">회원가입</button>
   </div>
+
 </section>

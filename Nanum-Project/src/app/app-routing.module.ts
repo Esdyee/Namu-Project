@@ -16,9 +16,7 @@ import { EditorComponent } from './common/editor/editor.component';
 const routes: Routes = [
   { path: '', redirectTo: 'login/main', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'main', component: MainFeedComponent, canActivate: [LoginGuard] },
-  { path: 'questions', component: QuestionFeedComponent },
-  { path: 'editor', component: EditorComponent },
+  { path: 'main', component: MainFeedComponent, canActivate: [LoginGuard]  },
   { path: '**', component: NotFoundComponent},
 ];
 

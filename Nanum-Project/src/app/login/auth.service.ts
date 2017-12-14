@@ -1,8 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
+import { FormGroup } from '@angular/forms'
 import { Observable } from 'rxjs';
 import { AppService } from '../app.service';
 import 'rxjs/add/operator/map';
+
+interface loginData {
+  email:string;
+  password: string;
+}
+
+interface signupData{
+  name:string;
+  email: string;
+  password1: string;
+  password2: string;
+}
+
+interface facebookData{
+  accessToken:string;
+  userid:string;
+}
 
 @Injectable()
 export class AuthService {
@@ -17,10 +35,13 @@ export class AuthService {
     this.token = currentUser && currentUser.token;
   }
 
-  login(email: string, password: string): Observable<boolean> {
-    return this.http.post("https://siwon.me/user/login/", JSON.stringify({ email: email, password: password })
-    , { headers : this.headers})
+  connect(api:string, category:string, data){
+    let paylord = data
+
+    return this.http.post(api, JSON.stringify(paylord)
+      , { headers: this.headers })
       .map((response: Response) => {
+        console.log("connect");
         // login successful if there's a jwt token in the response
         let token = response.json() && response.json().token;
         if (token) {
@@ -28,7 +49,7 @@ export class AuthService {
           this.token = token;
 
           // store email and jwt token in local storage to keep user logged in between page refreshes
-          localStorage.setItem('currentUser', JSON.stringify({ email: email, token: token }));
+          localStorage.setItem('currentUser', JSON.stringify({ token: token }));
 
           // return true to indicate successful login
           return true;
@@ -37,6 +58,23 @@ export class AuthService {
           return false;
         }
       });
+  }
+
+  login(email: string, password: string): Observable<boolean> {
+    let data:loginData = {email:email, password:password}
+    return this.connect(this.path.api_path + "user/login/", 'login',  data);
+  }
+
+  signup(email: string, password: string, password2: string, name: string): Observable<boolean>{
+    let data: signupData = { email : email, password1 : password, password2 : password2, name : name}
+    
+    return this.connect(this.path.api_path + "user/signup/", 'signup', data);
+  }
+
+  facebooklogin(accessToken: string, userid: string, connectFunc){
+    console.log(accessToken);
+    let data:facebookData = {accessToken:accessToken, userid:userid}
+    return connectFunc("https://siwon.me/user/facebook/", 'facebook', data);
   }
 
   logout(): void {

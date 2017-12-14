@@ -1,8 +1,5 @@
-import {
-  Component, ViewChild, OnInit, OnDestroy, Input, Output,
-  EventEmitter,
-} from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, ElementRef, ViewChild, OnInit, OnDestroy } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -12,7 +9,6 @@ import 'rxjs/add/observable/from';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
-import { QuestionService } from '../../question-feed/question.service';
 
 @Component({
   selector: 'app-editor',
@@ -20,16 +16,11 @@ import { QuestionService } from '../../question-feed/question.service';
   styleUrls: ['./editor.component.css']
 })
 export class EditorComponent implements OnInit, OnDestroy {
-  @Input() answerMetaData;
-
-  @Output() closed = new EventEmitter<boolean>();
-
   form: FormGroup;
   subscription: Subscription;
   content;
 
-
-  constructor(fb: FormBuilder, private http: QuestionService) {
+  constructor(fb: FormBuilder) {
     this.form = fb.group({
       // TODO: add Validator
       editor: ['']
@@ -41,21 +32,22 @@ export class EditorComponent implements OnInit, OnDestroy {
     const observable$ = Observable.from(this.editor.onContentChanged);
     this.subscription = observable$.subscribe(
       data => {
+        console.log(data);
         this.content = data;
       },
         error => console.log(error),
       () => console.log('done')
     );
-    // auto draft save 전용 subscription
     this.editor
-      .onContentChanged.debounceTime(300)
+      .onContentChanged.debounceTime(300) // 추후 자동저장 구현 시..
       .distinctUntilChanged()
       .subscribe(data => {
+        console.log(JSON.stringify(data.editor.getContents()));
+        // console.log('view child + directly subscription', data);
       });
   }
 
   ngOnDestroy() {
-    console.log('destroyed');
     this.subscription.unsubscribe();
   }
 
@@ -63,34 +55,11 @@ export class EditorComponent implements OnInit, OnDestroy {
     $event.focus();
   }
 
-  saveContent() {
-    const payload = {
-      question: this.answerMetaData.pk,
-      content: this.content.editor.getContents(),
-      content_html: this.content.html,
-      published: false
-    };
-    alert('임시저장되었습니다');
+  getContent() {
   }
 
   onSubmit() {
-    const payload = {
-      question: this.answerMetaData.pk,
-      content: this.content.editor.getContents(),
-      content_html: this.content.html,
-      published: true
-    };
-    this.http.addAnswer(payload).subscribe(
-      // TODO: repsonse로 완료 화면 그리기
-      res => {
-        this.closeEditor();
-        console.log('done');
-      },
-        error => console.log(error)
-    );
+    console.log(this.content);
   }
 
-  closeEditor() {
-    this.closed.emit(false);
-  }
 }
