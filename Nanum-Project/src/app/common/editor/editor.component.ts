@@ -47,6 +47,7 @@ export class EditorComponent implements OnInit, OnDestroy {
       () => console.log('done')
     );
     // auto draft save 전용 subscription
+    // auto draft save 전용 subscription
     this.editor
       .onContentChanged.debounceTime(300)
       .distinctUntilChanged()
